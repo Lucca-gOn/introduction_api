@@ -1645,11 +1645,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\51021784826\\Desktop\\Intruducao API\\API Jogos\\senai.inlock.webApi\\senai.inlock.webApi.csproj",
+      "projectUniqueName": "C:\\Users\\51021784826\\Desktop\\introduction_api\\API Jogos\\senai.inlock.webApi\\senai.inlock.webApi.csproj",
       "projectName": "senai.inlock.webApi",
-      "projectPath": "C:\\Users\\51021784826\\Desktop\\Intruducao API\\API Jogos\\senai.inlock.webApi\\senai.inlock.webApi.csproj",
+      "projectPath": "C:\\Users\\51021784826\\Desktop\\introduction_api\\API Jogos\\senai.inlock.webApi\\senai.inlock.webApi.csproj",
       "packagesPath": "C:\\Users\\51021784826\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\51021784826\\Desktop\\Intruducao API\\API Jogos\\senai.inlock.webApi\\obj\\",
+      "outputPath": "C:\\Users\\51021784826\\Desktop\\introduction_api\\API Jogos\\senai.inlock.webApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\51021784826\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1714,7 +1714,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

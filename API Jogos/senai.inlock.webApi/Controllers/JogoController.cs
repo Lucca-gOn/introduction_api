@@ -13,34 +13,31 @@ namespace senai.inlock.webApi.Controllers
 
     //Define que o tipo de resposta da API será em formato JSON
     [Produces("application/json")]
-
-    //Método controlador que herda da controller base 
-    //Onde será criado os Endpoints (Rotas)
-    public class EstudioController : ControllerBase
+    public class JogoController : ControllerBase
     {
         /// <summary>
-        /// Objeto _estudioRepository que irá receber todos os métodos definidos na interface IEstudioRepository
+        /// Objeto _jogoRepository que irá receber todos os métodos definidos na interface IJogoRepository
         /// </summary>
-        private IEstudioRepository _estudioRepository {  get; set; }
+        private IJogoRepository _jogoRepository { get; set; }
 
         /// <summary>
         /// Instancia o objeto _estudioRepository para que haja referencia aos métodos no repositórios 
         /// </summary>
-        
-        public EstudioController() 
-        { 
-            _estudioRepository = new EstudioRepository();
+
+        public JogoController()
+        {
+            _jogoRepository = new JogoRepository();
         }
 
         [HttpGet]
         [Authorize(Roles = "admin,cliente")]
-        public IActionResult Get ()
+        public IActionResult Get()
         {
             try
             {
-                List<EstudioDomain> ListaEstudios = _estudioRepository.ListarTodos();
+                List<JogoDomain> ListaJogo = _jogoRepository.ListarTodos();
 
-                return Ok(ListaEstudios);
+                return Ok(ListaJogo);
             }
             catch (Exception erro)
             {
@@ -48,14 +45,13 @@ namespace senai.inlock.webApi.Controllers
                 return BadRequest(erro.Message);
             }
         }
-
         [HttpPost]
         [Authorize(Roles = "admin")]
-        public IActionResult Add (EstudioDomain novoEstudio)
+        public IActionResult Add(JogoDomain novoJogo)
         {
             try
             {
-                _estudioRepository.Cadastrar(novoEstudio);
+                _jogoRepository.Cadastrar(novoJogo);
 
                 return StatusCode(201);
             }
@@ -65,14 +61,13 @@ namespace senai.inlock.webApi.Controllers
                 return BadRequest(erro.Message);
             }
         }
-
         [HttpDelete]
         [Authorize(Roles = "admin")]
-        public IActionResult Delete (int id) 
+        public IActionResult Delete(int id)
         {
             try
             {
-                _estudioRepository.Deletar(id);
+                _jogoRepository.Deletar(id);
 
                 return StatusCode(204);
             }

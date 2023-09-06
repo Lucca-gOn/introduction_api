@@ -14,6 +14,16 @@
             Instancia o objeto _estudioRepository para que haja referencia aos métodos no repositórios 
             </summary>
         </member>
+        <member name="P:senai.inlock.webApi.Controllers.JogoController._jogoRepository">
+            <summary>
+            Objeto _jogoRepository que irá receber todos os métodos definidos na interface IJogoRepository
+            </summary>
+        </member>
+        <member name="M:senai.inlock.webApi.Controllers.JogoController.#ctor">
+            <summary>
+            Instancia o objeto _estudioRepository para que haja referencia aos métodos no repositórios 
+            </summary>
+        </member>
         <member name="T:senai.inlock.webApi.Domains.EstudioDomain">
             <summary>
             Classe que representa a entidade (tabela) Estudio
@@ -69,6 +79,12 @@
             Deletar um objeto Estudio
             </summary>
             <param name="id">Id do objeto que será deletado</param>
+        </member>
+        <member name="M:senai.inlock.webApi.Interfaces.IUsuarioRepository.Login(System.String,System.String)">
+            <summary>
+            Interface responsável pelo repositório UsuarioRepository
+            Definir os métodos que serão implementados pelo UsuarioRepository
+            </summary>
         </member>
         <member name="F:senai.inlock.webApi.Repositories.EstudioRepository.StringConexao">
             <summary>
