@@ -33,7 +33,7 @@ builder.Services.AddAuthentication(options =>
         IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("inlock-chave-autenticacao-webapi-dev")),
 
         //Valida o tempo de expiração do token
-        ClockSkew = TimeSpan.FromMinutes(5),
+        ClockSkew = TimeSpan.FromMinutes(10),
 
         //Nome do issuer (de onde esta vindo)
         ValidIssuer = "senai.inlock.webApi",

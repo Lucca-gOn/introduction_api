@@ -26,14 +26,17 @@ namespace senai.inlock.webApi.Controllers
         /// <summary>
         /// Instancia o objeto _estudioRepository para que haja referencia aos métodos no repositórios 
         /// </summary>
-        
         public EstudioController() 
         { 
             _estudioRepository = new EstudioRepository();
         }
 
+        /// <summary>
+        /// Endpoint que aciona o método ListarTodos no repositório.
+        /// </summary>
+        /// <returns>A resposta para o usuario(front-end)</returns>
         [HttpGet]
-        [Authorize(Roles = "admin,cliente")]
+        [Authorize(Roles = "1,2")]
         public IActionResult Get ()
         {
             try
@@ -49,8 +52,13 @@ namespace senai.inlock.webApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint que aciona o método de cadastro Estudio.
+        /// </summary>
+        /// <param name="novoEstudio">Objeto recebido na requisição</param>
+        /// <returns>A resposta para o usuario(front-end)</returns>
         [HttpPost]
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "2")]
         public IActionResult Add (EstudioDomain novoEstudio)
         {
             try
@@ -66,8 +74,13 @@ namespace senai.inlock.webApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint que aciona o método de deletar Estudio.
+        /// </summary>
+        /// <param name="id">Id do objeto recebido na requisição</param>
+        /// <returns>A resposta para o usuario(front-end)</returns>
         [HttpDelete]
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "2")]
         public IActionResult Delete (int id) 
         {
             try

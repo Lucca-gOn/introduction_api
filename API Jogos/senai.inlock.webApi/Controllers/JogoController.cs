@@ -29,8 +29,13 @@ namespace senai.inlock.webApi.Controllers
             _jogoRepository = new JogoRepository();
         }
 
+        /// <summary>
+        /// Endpoint que aciona o método ListarTodos no repositório.
+        /// </summary>
+        /// <returns>A resposta para o usuario(front-end)</returns>
         [HttpGet]
-        [Authorize(Roles = "admin,cliente")]
+        [Authorize(Roles = "1,2")]
+
         public IActionResult Get()
         {
             try
@@ -45,8 +50,14 @@ namespace senai.inlock.webApi.Controllers
                 return BadRequest(erro.Message);
             }
         }
+
+        /// <summary>
+        /// Endpoint que aciona o método de cadastro Jogo.
+        /// </summary>
+        /// <param name="novoJogo">Objeto recebido na requisição</param>
+        /// <returns>A resposta para o usuario(front-end)</returns>
         [HttpPost]
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "2")]
         public IActionResult Add(JogoDomain novoJogo)
         {
             try
@@ -61,8 +72,14 @@ namespace senai.inlock.webApi.Controllers
                 return BadRequest(erro.Message);
             }
         }
+
+        /// <summary>
+        /// Endpoint que aciona o método de deletar Jogo.
+        /// </summary>
+        /// <param name="id">Id do objeto recebido na requisição</param>
+        /// <returns>A resposta para o usuario(front-end)</returns>
         [HttpDelete]
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "2")]
         public IActionResult Delete(int id)
         {
             try

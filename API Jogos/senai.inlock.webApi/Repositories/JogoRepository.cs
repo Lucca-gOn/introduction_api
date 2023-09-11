@@ -14,7 +14,12 @@ namespace senai.inlock.webApi.Repositories
         ///     -Windows: Integrated Security = true
         ///     -SqlServer: User Id = sa; Pwd = Senha
         /// </summary>
-        private string StringConexao = "Data Source = NOTE08-S14; Initial Catalog = inlock_games_manha; User Id= sa; Pwd = Senai@134";
+        private string StringConexao = "Data Source = NOTE10-S14\\SQLEXPRESS; Initial Catalog = inlock_games_manha; User Id= sa; Pwd = Senai@134";
+
+        /// <summary>
+        /// Cadastrar um novo jogo
+        /// </summary>
+        /// <param name="novoJogo">Objeto com as informações que serão cadastradas</param>
         public void Cadastrar(JogoDomain novoJogo)
         {
             using (SqlConnection con = new SqlConnection(StringConexao))
@@ -36,6 +41,10 @@ namespace senai.inlock.webApi.Repositories
             }
         }
 
+        /// <summary>
+        /// Deleta um jogo
+        /// </summary>
+        /// <param name="id">Objetos que serão excluidos</param>
         public void Deletar(int id)
         {
             using (SqlConnection con = new SqlConnection(StringConexao))
@@ -54,6 +63,10 @@ namespace senai.inlock.webApi.Repositories
             }
         }
 
+        /// <summary>
+        /// Lista todos objetos jogos
+        /// </summary>
+        /// <returns></returns>
         public List<JogoDomain> ListarTodos()
         {
 

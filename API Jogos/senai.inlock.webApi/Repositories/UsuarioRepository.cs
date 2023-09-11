@@ -14,7 +14,14 @@ namespace senai.inlock.webApi.Repositories
         ///     -Windows: Integrated Security = true
         ///     -SqlServer: User Id = sa; Pwd = Senha
         /// </summary>
-        private string StringConexao = "Data Source = NOTE08-S14; Initial Catalog = inlock_games_manha; User Id= sa; Pwd = Senai@134";
+        private string StringConexao = "Data Source = NOTE10-S14\\SQLEXPRESS; Initial Catalog = inlock_games_manha; User Id= sa; Pwd = Senai@134";
+        
+        /// <summary>
+        /// Autenticar um usuário com base em seu email e senha, usando login do objeto usuario.
+        /// </summary>
+        /// <param name="email">Um string representando o email do usuário.</param>
+        /// <param name="senha">Um string representando a senha do usuário</param>
+        /// <returns></returns>
         public UsuarioDomain Login(string email, string senha)
         {
             using (SqlConnection con = new SqlConnection(StringConexao))

@@ -14,7 +14,12 @@ namespace senai.inlock.webApi.Repositories
         ///     -Windows: Integrated Security = true
         ///     -SqlServer: User Id = sa; Pwd = Senha
         /// </summary>
-        private string StringConexao = "Data Source = NOTE08-S14; Initial Catalog = inlock_games_manha; User Id= sa; Pwd = Senai@134";
+        private string StringConexao = "Data Source = NOTE10-S14\\SQLEXPRESS; Initial Catalog = inlock_games_manha; User Id= sa; Pwd = Senai@134";
+        
+        /// <summary>
+        /// Cadastrar um novo estudio
+        /// </summary>
+        /// <param name="novoEstudio">Objeto com as informações que serão cadastradas</param>
         public void Cadastrar(EstudioDomain novoEstudio)
         {
             using (SqlConnection con = new SqlConnection(StringConexao)) 
@@ -32,6 +37,10 @@ namespace senai.inlock.webApi.Repositories
             }
         }
 
+        /// <summary>
+        /// Deleta um estudio.
+        /// </summary>
+        /// <param name="id">Objetos que serão excluidos</param>
         public void Deletar(int id)
         {
             using (SqlConnection con = new SqlConnection(StringConexao)) 

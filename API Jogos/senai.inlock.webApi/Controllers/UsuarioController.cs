@@ -21,7 +21,11 @@ namespace senai.inlock.webApi.Controllers
         {
             _usuarioRepository = new UsuarioRepository();
         }
-
+        /// <summary>
+        /// Endpoint que aciona o método Login.
+        /// </summary>
+        /// <param name="usuario">Usuario recebido na requisição.</param>
+        /// <returns>A resposta para o usuario(front-end)</returns>
         [HttpPost]
         public IActionResult Login(UsuarioDomain usuario)
         {
@@ -68,7 +72,7 @@ namespace senai.inlock.webApi.Controllers
                     claims: claims,
 
                     //tempo de expiração
-                    expires: DateTime.Now.AddMinutes(5),
+                    expires: DateTime.Now.AddMinutes(10),
 
                     //credenciais token
                     signingCredentials: creds
